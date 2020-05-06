@@ -7,7 +7,7 @@ COPY /src ./src/
 
 COPY . .
 
-RUN ../gradlew build
+RUN /gradlew clean build
 
 COPY /build/libs/spring-app-*.jar app.jar
 
