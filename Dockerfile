@@ -11,6 +11,7 @@ RUN /gradlew clean build
 
 COPY /build/libs/spring-app-*.jar app.jar
 
-EXPOSE 8080
+ENV PORT 80
+EXPOSE $PORT
 
 CMD ["java","-jar","/app.jar"]

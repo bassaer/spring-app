@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/table.css}" rel="stylesheet">
+    <title>All users</title>
+</head>
+<body>
+    <table border="1">
+        <tr class="header">
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+       <tr th:each="user, status : ${users}">
+           <td th:text="${user.id}" th:class="${status.odd} ? 'odd' : 'even'"></td>
+           <td th:text="${user.name}" th:class="${status.odd} ? 'odd' : 'even'"></td>
+           <td th:text="${user.email}"th:class="${status.odd} ? 'odd' : 'even'"></td>
+       </tr>
+    </table>
+</body>
+</html>
